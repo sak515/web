@@ -1,0 +1,491 @@
+<pre><code>
+</code></pre><!DOCTYPE html> 
+<html>
+	<head> 
+		<title>HTML Calculator</title> 
+		<link rel="stylesheet" href="Calc.css">
+	</head> 
+	<body> 
+		<table id="calcu"> 
+			<tr> 
+				<td colspan="4"> 
+					<input type="text" id="res"> 
+				</td> 
+			</tr> 
+			<tr> 
+				<td><input type="button" value="c" onclick = "Clear()"></td> 
+				<td><input type="button" value = '←' onclick ="Back('←')"></td>
+				<td><input type="button" value = '%' onclick = "Solve('%')"></td>
+				<td><input type="button" value="/" onclick = "Solve('/')"></td>
+			</tr> 
+			<tr>
+				<td><input type="button" value="1" onclick = "Solve('1')"></td> 
+				<td><input type="button" value="2" onclick = "Solve('2')"></td> 
+				<td><input type="button" value="3" onclick = "Solve('3')"></td> 
+				<td><input type="button" value="+" onclick = "Solve('+')"></td> 
+			</tr> 
+			<tr> 
+				<td><input type="button" value="4" onclick = "Solve('4')"></td> 
+				<td><input type="button" value="5" onclick = "Solve('5')"></td> 
+				<td><input type="button" value="6" onclick = "Solve('6')"></td>
+				<td><input type="button" value="-" onclick = "Solve('-')"></td>		
+			</tr> 
+			<tr> 
+				<td><input type="button" value="7" onclick = "Solve('7')"></td> 
+				<td><input type="button" value="8" onclick = "Solve('8')"></td> 
+				<td><input type="button" value="9" onclick = "Solve('9')"></td> 
+				<td><input type="button" value="*" onclick = "Solve('*')"></td> 
+			</tr> 
+			<tr> 
+				<td><input type="button" value = '00' onclick = "Solve('00')"></td>
+				<td><input type="button" value="0" onclick = "Solve('0')"></td> 
+				<td><input type="button" value="." onclick = "Solve('.')"></td> 
+				<td><input type="button" value="=" onclick = "Result()"></td> 
+			</tr>
+		</table>
+		<script src = 'Calc.js' ></script>
+	</body>
+</html> 
+
+function Solve(val) {
+   var v = document.getElementById('res');
+   v.value += val;
+}
+function Result() {
+   var num1 = document.getElementById('res').value;
+   var num2 = eval(num1);
+   document.getElementById('res').value = num2;
+}
+function Clear() {
+   var inp = document.getElementById('res');
+   inp.value = '';
+}
+function Back() {
+   var ev = document.getElementById('res');
+   ev.value = ev.value.slice(0,-1);
+}
+table { 
+			border: 1px solid black; 
+			margin-left: auto; 
+			margin-right: auto; 
+		} 
+		
+input[type="button"] { 
+			width: 100%; 
+			padding: 20px 40px; 
+			background-color: green; 
+			color: white; 
+			font-size: 24px; 
+			font-weight: bold; 
+			border: none; 
+			border-radius: 5px; 
+		} 
+		
+input[type="text"] { 
+			padding: 20px 45px; 
+			font-size: 24px; 
+			font-weight: bold; 
+			border: none; 
+			border-radius: 5px; 
+			border: 2px solid black; 
+		}
+<html>
+<head>
+<style> 
+input {
+  font-weight: 900;
+  color: blue;
+  font-size: 20px;
+}
+</style>
+</head>
+<body>
+    Select a country :
+    <select id="countries" onchange=getCapital()>
+        <option value="0">Australia</option>
+        <option value="1">Poland</option>
+        <option value="2">Mexico</option>
+        <option value="3">Germany</option>
+        <option value="4">India</option>
+    </select>
+    <br/><br/>
+    Capital: <input type="text" id="txtbox">
+    <script>
+        function getCapital() {
+            var capitals=["Canberra","Warsaw","Mexico City","Berlin","New Delhi"];
+            var i = document.getElementById("countries").selectedOptions[0].value;
+            document.getElementById("txtbox").value = capitals[i];
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>JavaScript Regular expression to check string's first character is uppercase or not</title>
+<script>
+function upper_case(str) {
+  regexp=/[A-Z]/;
+  if (regexp.test(str)) {
+    alert("String's first character is uppercasea");
+  } else {
+    alert("String's first character is not uppercase");
+  }
+}
+upper_case('AbcdZ');
+upper_case('abcdz');
+</script>
+</head>
+<body>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>JavaScript Email Validation</title>
+	<script>
+	function ValidateEmail(input) {
+		var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+		if (input.value.match(validRegex)) {
+			alert("Valid email address!");
+			document.form1.text1.focus();
+			return true;
+		}
+		else {
+			alert("Invalid email address!");
+			document.form1.text1.focus();
+			return false;
+		}
+	}
+	</script>
+	</head>
+  <body onload="document.form1.text1.focus()">
+	<div>
+		<h2>Input an email address</h2>
+		<form name="form1" action="#">
+			<input type="text" name="text1" />
+			<input type="submit" name="validate" value="Validate" onclick="ValidateEmail(document.form1.text1)"/>
+		</form>
+	</div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript function to print an integer with commas as thousands separators</title>
+  
+</head>
+<body>
+	<div>
+		<h2>java script function to print an integer with commas as thousand separators</h2>
+	</div>
+	<script>
+  function thousands_separators(num)
+  {
+    var num_parts = num.toString().split(".");
+    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return num_parts.join(".");
+  }
+
+document.write(thousands_separators(100000000000000));
+//console.log(thousands_separators(10000.23));
+//console.log(thousands_separators(1000000));
+  </script>
+</body>
+</html>
+
+Main.html:
+<html>
+<head>
+<title>
+Amazon</title>
+</head>
+<body bgcolor="cyan"> <center>
+<strong><h1>Welcome to AMAZON</h1></strong>
+<form method="post" action="login.html" target=_blank >
+<h4>for books</h4><input type="submit" value="click here">
+</form>
+</center>
+</body>
+</html>
+
+
+Registration and user Login
+
+Login.html:
+<html>
+<head>
+<title>
+login</title>
+</head>
+<body bgcolor="cyan"> <center>
+<strong><h1> AMAZON </h1></strong></center>
+<right>
+<table align="right">
+<tr>
+<td><h4>user name</td>
+<td><input type="text" ></td>
+<td></td>
+</tr>
+<tr>
+<td><h4>password</td>
+<td><input type="password"></td>
+<td></td>
+</tr>
+<tr>
+<td>
+<form method="post" action="catalog.html" >
+<input type="submit" value="submit" >
+</form>
+</td>
+<td>
+<form method="post" action="reg.html" >
+<input type="submit" value="register" >
+&nbsp;&nbsp;
+<input type="reset" value="reset"></form></td>
+</tr>
+</table>
+</body>
+</html>
+
+Registration page
+
+reg.html:
+<html>
+<head>
+<title>
+login page</title>
+</head>
+<body bgcolor="cyan">
+<center><strong><h1> AMAZON </h1></strong></center>
+<form method="post" action="catalog.html" >
+<right>
+<table align="left">
+<tr>
+<td><h4>user name</td>
+<td><input type="text" ></td>
+<tr>
+<tr>
+<td><h4>password</td>
+<td><input type="password"></td>
+</tr>
+<tr>
+<td><h4>confirm password</td>
+<td><input type="password"></td>
+</tr>
+<tr>
+<td><h4>male &nbsp;&nbsp;
+<option >
+<input type="radio" name="sex" id="male"></td>
+<td><h4>female &nbsp; &nbsp;
+<input type="radio" name="sex" id="female" ></td>
+</option>
+</tr>
+<tr>
+<td>Address</td>
+<td><textarea name="address" rows=5 cols=19>
+</textarea>
+</td>
+<tr>
+<td>
+<input type="submit" value="submit" ></td>
+<td>
+<input type="reset" value="reset"></td>
+</tr>
+</form>
+</body>
+</html>
+
+Userprofile
+
+userprofile.html
+<html>
+<head>
+<title>
+userprofile</title>
+</head>
+<body bgcolor="cyan"> <center>
+<strong><h1>Welcome to AMAZON Online Book Store </h1></strong></center>
+Edit your profile here...
+<form method="post" action="catalog.html" >
+<right>
+<table align="left">
+<tr>
+<td><h4>Edit user name</td>
+<td><input type="text" ></td>
+<tr>
+<tr>
+<td><h4>Edit password</td>
+<td><input type="password"></td>
+</tr>
+<tr>
+<option >
+<td><h4>male &nbsp;&nbsp;
+<input type="radio" name="sex" id="male"></td>
+<td><h4>female &nbsp; &nbsp;
+<input type="radio" name="sex" id="female" ></td>
+</option>
+</tr>
+<tr>
+<td>Edit Address</td>
+<td><textarea name="address" rows=5 cols=19>
+</textarea>
+</td>
+<tr>
+<td>
+<input type="submit" value="submit" ></td>
+</tr>
+</form>
+</body>
+</html>
+
+
+Books catalog
+Catalog.html:
+<html>
+<head>
+<title>
+books catalog</title>
+</head>
+<body bgcolor="cyan">
+<center><h1>AMAZON</h1></center>
+<form method="post" action="shopping.html">
+<left>
+<table>
+<tr>
+<td><b><h3>frontend books</td>
+<td></td></tr>
+<tr>
+<td></td>
+<td><h4>C&Ds</td>
+</tr>
+<tr>
+<td></td>
+<td><h4>Ads</td>
+</tr>
+<tr>
+<td></td>
+<td><h4>JAVA
+</td></tr>
+<tr>
+<td><b><h3>backend books</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><h4>Oracle</td>
+</tr>
+<tr>
+<td></td>
+<td><h4>Ms SQL Server
+</td></tr>
+<tr>
+<td></td>
+<td><h4>MySql </td>
+</tr>
+</table>
+</h4>
+<center>
+<b>for buy one of these books
+<br>
+</b><input type="submit" value="click here">
+</center>
+</form>
+</body>
+</html>
+
+Shopping cart
+
+Shopping.html:
+<html>
+<head><title>shopping cart</title>
+</head>
+<body bgcolor="cyan">
+<center><h1>
+Shopping Cart</h1></center>
+<br><br><br><br><br>
+<table align="center">
+<tr>
+<td>Text Books</td>
+<td>
+<select >
+<optgroup label="select the book">
+<option value="C&Ds">C&Ds
+<option value="Ads">Ads
+<option value="Java">Java
+<option value="Oracle">Oracle
+<option value="Ms SQL Server">Ms SQL Server
+<option value="MySql">MySql
+</optgroup>
+</select>
+</td></tr>
+<tr>
+<td>
+Quantity</td>
+<td>
+<input type="text" id="q">
+</td></tr>
+<tr>
+<td></td>
+<td>
+<form method=post action="payment.html">
+<input type="submit" value=ok />
+</form>
+</td></tr>
+</table>
+<center>
+<pre>Cost of one book is"500" + shipping "100"</pre>
+</center>
+<body>
+</html>
+
+
+Payment by credit card
+
+Payment.html:
+<html>
+<head><title>payment</title></head>
+<body bgcolor="cyan">
+<center><h1>Payment By Credit Card</h1></center>
+<form method=post action="ordrconform.html">
+<br><br><br><br><br>
+<table align="center">
+<tr>
+<td>
+<h4>Total Amount</h4></td>
+<td><input type="text">
+</td>
+</tr>
+<tr>
+<td><h4>Credit Card Number</td>
+<td><input type="text"></td>
+</tr>
+<tr>
+<td>
+</td>
+<td><input type="submit" value=OK>
+</td>
+</tr>
+</table>
+</form></body>
+</html>
+
+
+Order Conformation
+
+Ordrconform:
+<html>
+<head><title>order conformation</title><M/head>
+<body bgcolor="cyan">
+<center>
+<h1><b>BOOK SHOPPING</h1>
+<pre><strong>
+<b>Your order Is Conformed
+</strong></pre>
+<h2><b>THANK YOU</h2>
+</center>
+</body></html>
